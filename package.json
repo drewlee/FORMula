@@ -1,0 +1,21 @@
+{
+  "name": "FORMula",
+  "version": "0.0.1",
+  "description": "The ultimate client side form validation and processing utility.",
+  "main": "server.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/drewlee/FORMula.git"
+  },
+  "author": "Andrew A Lee",
+  "license": "",
+  "dependencies": {
+    "connect": "2.7.9"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}
