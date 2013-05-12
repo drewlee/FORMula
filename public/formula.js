@@ -1,11 +1,11 @@
-var FORMula;
-
-(function(namespace){
+(function(scope){
   'use strict';
 
-  namespace = function(){
+  var instance;
+
+  scope.FORMula = function(){
     console.log('initalized');
   };
 
-  var formula = new namespace();
-}(FORMula));
+  instance = new scope.FORMula();
+}(window));
