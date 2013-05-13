@@ -1,11 +1,48 @@
-(function(scope){
+(function(){
   'use strict';
 
-  var instance;
+  var scope = this,
+      Inheritor,
+      instance;
 
-  scope.FORMula = function(){
-    console.log('initalized');
-  };
+  Inheritor = (function(){
+    var self = {},
+        name = 'extend',
+        Proxy = function(){};
 
-  instance = new scope.FORMula();
-}(window));
+    self[name] = function(fn){
+      var Parent = this,
+          Child = function(){ this.init.apply(this, arguments); },
+          methods = fn( Parent.prototype ),
+          i;
+
+      Proxy.prototype = Parent.prototype;
+      Child.fn = Child.prototype = new Proxy;
+      Child.fn.init = function(){};
+
+      Child[name] = Parent[name];
+
+      for (i in methods){
+        if (methods.hasOwnProperty(i)){
+          Child.fn[i] = methods[i];
+        }
+      }
+      
+      Child.fn.constructor = Parent;
+      delete Child.fn;
+      return Child;
+    };
+
+    return self;
+  }());
+
+  scope.FORMula = Inheritor.extend(function(){
+    return {
+      init: function(){
+        console.log('initialized');
+      }
+    };
+  });
+
+  instance = new FORMula();
+}).call(this);
