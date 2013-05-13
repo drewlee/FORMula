@@ -44,5 +44,5 @@
     };
   });
 
-  instance = new FORMula();
+  instance = new scope.FORMula();
 }).call(this);
