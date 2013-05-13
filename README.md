@@ -3,9 +3,10 @@ FORMula
 
 The ultimate client side form validation and processing utility.
 
-To play with the example:
+Try out the example:
 
-1. Get Node.js
-2. Download the repo
-3. Run `node server.js`
-4. Browse to http://localhost:8080
+1. Download the repo
+2. Get Node
+3. Run `npm install`
+4. Run `node server.js`
+5. Browse to http://localhost:8080
