@@ -14,7 +14,7 @@
     <input type="text" id="fname" name="fname" data-frml-errors="{
       'required': 'First name cannot be empty',
       'pattern' : 'No special characters please.'
-    }" required />
+    }" required pattern="^\w+$" />
   </fieldset>
 
   <ul class="errors" data-frml-field="lname"></ul>
@@ -23,7 +23,7 @@
     <input type="text" id="lname" name="lname" data-frml-errors="{
       'required': 'Last name cannot be empty',
       'pattern': 'No special characters please.'
-    }" required />
+    }" required pattern="^\w+$" />
   </fieldset>
 
   <input type="submit" value="submit" />
@@ -32,5 +32,10 @@
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="src/formula.js"></script>
 <script src="app.js"></script>
+<script>
+var myform = new MyForm({
+  form: 'simple_form'
+});
+</script>
 </body>
 </html>

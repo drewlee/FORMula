@@ -1,3 +1,4 @@
+/*global $: true, console: true, document: true */
 (function(){
   'use strict';
 
@@ -40,7 +41,7 @@
 
   var FORMula = Inheritor.extend(function(){
     var CONFIG = {
-      DATA_ERRORS = 'frml-errors'
+      DATA_ERRORS: 'frml-errors'
     };
 
     return {
@@ -79,10 +80,10 @@
 
       parseAttr: function(attr){
         var data = attr.replace(/.'/g, function(str){
-            if (str.indexOf('\\') === 0){
-                return str.charAt(1);
-            }
-            return str.charAt(0) + '"';
+          if (str.indexOf('\\') === 0){
+            return str.charAt(1);
+          }
+          return str.charAt(0) + '"';
         });
 
         return JSON.parse(data);

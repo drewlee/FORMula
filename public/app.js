@@ -6,7 +6,3 @@ var MyForm = FORMula.extend( function(super_){
     }
   };
 } );
-
-var myform = new MyForm({
-  form: 'simple_form'
-});
