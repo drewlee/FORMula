@@ -1,12 +1,16 @@
 /*global $: true, console: true, document: true */
-(function(){
+(function(factory){
+  if (typeof define === 'function' && define.amd){
+    define(factory);
+  } else if (typeof module === 'object' && typeof module.exports === 'object'){
+    module.exports = factory();
+  } else {
+    this.FORMula = factory();
+  }
+}).call(this, function(){
   'use strict';
 
-  var scope = this,
-      Inheritor,
-      instance;
-
-  Inheritor = (function(){
+  var Inheritor = (function(){
     var self = {},
         name = 'extend',
         Proxy = function(){};
@@ -99,5 +103,5 @@
     return $({});
   };
 
-  scope.FORMula = FORMula;
-}).call(this);
+  return FORMula;
+});
